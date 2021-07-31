@@ -52,12 +52,18 @@ class TXO:
                 scr = v['scriptPubKey']
                 addresses = scr['addresses']
                 self.owner = addresses[0]
-                print(self.owner)
             i=i+1
 
         pass
 
     def get_inputs(self,d=1):
-        pass
         #YOUR CODE HERE
+        tx = rpc_connection.getrawtransaction(self.tx_hash,True)
+        vins = tx['vin']
+
+        for v in vins:
+            print(v)
+            print()
+
+        pass
 
