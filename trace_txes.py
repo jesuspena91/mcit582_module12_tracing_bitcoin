@@ -48,7 +48,7 @@ class TXO:
         for v in vouts:
             if i == v['n']:
                 self.n = v['n']
-                self.amount = v['value']
+                self.amount = int(v['value']*100000000) #converting to Satoshi
                 scr = v['scriptPubKey']
                 addresses = scr['addresses']
                 self.owner = addresses[0]
@@ -61,7 +61,6 @@ class TXO:
         #YOUR CODE HERE
         print('other')
         tx = rpc_connection.getrawtransaction(self.tx_hash,True)
-        print('hello')
         vins = tx['vin']
 
         for v in vins:
