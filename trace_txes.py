@@ -47,7 +47,7 @@ class TXO:
         #print(tx_hash)
         self.tx_hash = tx['hash']
         print(tx['hash'])
-        print(tx['time'])
+        print(datetime.fromtimestamp(tx['time']))
         #self.n = tx['n']
 
         i = 1
@@ -58,7 +58,9 @@ class TXO:
                 #self.time = v['value']
                 #print(v)
                 #print()
+                print(v['n'])
                 print(v['value'])
+                print(v['addresses'])
                 print()
 
         # self.tx_hash = tx_hash 
