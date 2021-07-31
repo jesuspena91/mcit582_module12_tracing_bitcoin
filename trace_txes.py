@@ -41,7 +41,7 @@ class TXO:
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         clf.tx_hash = tx['hash']
         clf.time = datetime.fromtimestamp(tx['time'])
-        
+
         vouts = tx['vout']
         i = 0
         for v in vouts:
@@ -53,8 +53,7 @@ class TXO:
                 clf.owner = addresses[0]
             i=i+1
         
-        #txo_obj = TXO(self, tx_hash, n, amount, owner, time)
-        pass
+        return clf
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
