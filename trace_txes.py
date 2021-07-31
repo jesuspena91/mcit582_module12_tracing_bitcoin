@@ -60,7 +60,8 @@ class TXO:
                 #print()
                 #print(v['n'])
                 #print(v['value'])
-                print(v['scriptPubKey'])
+                scr = v['scriptPubKey']
+                print(scr['addresses'])
                 print()
 
         # self.tx_hash = tx_hash 
