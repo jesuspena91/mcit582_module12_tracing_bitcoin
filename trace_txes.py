@@ -36,7 +36,7 @@ class TXO:
         return json.dumps(json_dict, sort_keys=True, indent=4)
 
     @classmethod
-    def from_tx_hash(clf,tx_hash,n=0):
+    def from_tx_hash(cls,tx_hash,n=0):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         tx_hash_t = tx['hash']
@@ -53,7 +53,7 @@ class TXO:
                 owner_t = addresses[0]
             i=i+1
         print(owner_t)
-        return clf( tx_hash=tx_hash_t, n=n_t, amount=amount_t,owner=owner_t, time=time_t )
+        return cls( tx_hash=tx_hash_t, n=n_t, amount=amount_t,owner=owner_t, time=time_t )
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
