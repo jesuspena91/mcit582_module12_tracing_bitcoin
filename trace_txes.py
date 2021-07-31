@@ -61,7 +61,8 @@ class TXO:
                 #print(v['n'])
                 #print(v['value'])
                 scr = v['scriptPubKey']
-                print(scr['addresses'])
+                addresses = scr['addresses']
+                print(addresses[0])
                 print()
 
         # self.tx_hash = tx_hash 
