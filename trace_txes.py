@@ -53,8 +53,6 @@ class TXO:
                 addresses = scr['addresses']
                 self.owner = addresses[0]
             i=i+1
-
-        print('fdsfsdfsd')
         pass
 
     def get_inputs(self,d=1):
