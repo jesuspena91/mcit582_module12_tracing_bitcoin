@@ -42,8 +42,8 @@ class TXO:
         vouts = tx['vout']
 
         print(tx)
-        tx_hash = tx['hash']
-        print(tx_hash)
+        #tx_hash = tx['hash']
+        #print(tx_hash)
 
         i = 1
         for v in vouts:
