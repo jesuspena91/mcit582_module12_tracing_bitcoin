@@ -46,8 +46,8 @@ class TXO:
         i = 1
         for v in vouts:
             if i == v['n']:
-                self.n = v['n']
-                self.amount = v['value']
+                #self.n = v['n']
+                #self.amount = v['value']
                 #self.time = v['value']
                 print(v)
                 print()
