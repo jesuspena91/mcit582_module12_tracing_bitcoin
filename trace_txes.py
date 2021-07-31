@@ -46,7 +46,7 @@ class TXO:
         #print(tx_hash)
         self.tx_hash = tx['hash']
         print()
-        print(tx)
+        print(tx['time'])
         #self.n = tx['n']
 
         i = 1
