@@ -52,6 +52,7 @@ class TXO:
                 scr = v['scriptPubKey']
                 addresses = scr['addresses']
                 self.owner = addresses[0]
+                print(owner)
             i=i+1
 
         pass
