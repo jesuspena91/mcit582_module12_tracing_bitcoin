@@ -36,23 +36,25 @@ class TXO:
         return json.dumps(json_dict, sort_keys=True, indent=4)
 
     @classmethod
-    def from_tx_hash(self,tx_hash,n=0):
+    def from_tx_hash(clf,tx_hash,n=0):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
-        self.tx_hash = tx['hash']
-        self.time = datetime.fromtimestamp(tx['time'])
+        clf.tx_hash = tx['hash']
+        clf.time = datetime.fromtimestamp(tx['time'])
         print(tx)
 
         vouts = tx['vout']
         i = 0
         for v in vouts:
             if i == n:
-                self.n = v['n']
-                self.amount = int(v['value']*100000000) #converting to Satoshi
+                clf.n = v['n']
+                clf.amount = int(v['value']*100000000) #converting to Satoshi
                 scr = v['scriptPubKey']
                 addresses = scr['addresses']
-                self.owner = addresses[0]
+                clf.owner = addresses[0]
             i=i+1
+        
+        #txo_obj = TXO(self, tx_hash, n, amount, owner, time)
         pass
 
     def get_inputs(self,d=1):
