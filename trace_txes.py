@@ -41,8 +41,7 @@ class TXO:
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         clf.tx_hash = tx['hash']
         clf.time = datetime.fromtimestamp(tx['time'])
-        print(tx)
-
+        
         vouts = tx['vout']
         i = 0
         for v in vouts:
