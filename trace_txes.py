@@ -46,7 +46,7 @@ class TXO:
             if i > n:
                 print(v)
                 print()
-                print(v.value)
+                print(v['value'])
                 print()
 
         # self.tx_hash = tx_hash 
