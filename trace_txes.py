@@ -45,7 +45,9 @@ class TXO:
         #tx_hash = tx['hash']
         #print(tx_hash)
         self.tx_hash = tx['hash']
-        print(self.tx_hash)
+        print()
+        print(tx)
+        #self.n = tx['n']
 
         i = 1
         for v in vouts:
