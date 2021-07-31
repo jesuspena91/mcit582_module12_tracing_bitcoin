@@ -56,7 +56,7 @@ class TXO:
                 #self.n = v['n']
                 #self.amount = v['value']
                 #self.time = v['value']
-                #print(v)
+                print(v)
                 #print()
                 #print(v['n'])
                 #print(v['value'])
