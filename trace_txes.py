@@ -41,7 +41,7 @@ class TXO:
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         vouts = tx['vout']
 
-        print(tx)
+        #print(tx)
         #tx_hash = tx['hash']
         #print(tx_hash)
 
