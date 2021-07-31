@@ -43,7 +43,7 @@ class TXO:
 
         i = 1
         for v in vouts:
-            if i = 1:
+            if 1 > 0:
                 print(v)
                 print()
 
