@@ -41,6 +41,7 @@ class TXO:
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         self.tx_hash = tx['hash']
         self.time = datetime.fromtimestamp(tx['time'])
+        print(tx)
 
         vouts = tx['vout']
         i = 0
