@@ -52,10 +52,8 @@ class TXO:
                 addresses = scr['addresses']
                 owner_t = addresses[0]
             i=i+1
-        
-        print(amount_t)
 
-        return cls( tx_hash=tx_hash_t, n=n_t, amount=amount_t,owner=owner_t, time=time_t )
+        return cls( tx_hash=1, n=1, amount=1,owner=1, time=1 )
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
@@ -64,6 +62,4 @@ class TXO:
 
         for v in vins:
             print('hello')
-
-        pass
 
