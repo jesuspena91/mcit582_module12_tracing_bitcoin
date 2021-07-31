@@ -39,7 +39,7 @@ class TXO:
     def from_tx_hash(cls,tx_hash,n=0):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
-        print(tx.amount)
+        print(tx)
         # self.tx_hash = tx_hash 
         # self.n = n
         # self.amount = amount
