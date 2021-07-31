@@ -36,7 +36,7 @@ class TXO:
         return json.dumps(json_dict, sort_keys=True, indent=4)
 
     @classmethod
-    def from_tx_hash(cls,tx_hash,n=0):
+    def from_tx_hash(self,tx_hash,n=0):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         vouts = tx['vout']
@@ -44,6 +44,8 @@ class TXO:
         #print(tx)
         #tx_hash = tx['hash']
         #print(tx_hash)
+        self.tx_hash = tx['hash']
+        print(self.tx_hash)
 
         i = 1
         for v in vouts:
@@ -51,8 +53,8 @@ class TXO:
                 #self.n = v['n']
                 #self.amount = v['value']
                 #self.time = v['value']
-                print(v)
-                print()
+                #print(v)
+                #print()
                 print(v['value'])
                 print()
 
