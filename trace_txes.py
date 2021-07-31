@@ -41,9 +41,14 @@ class TXO:
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         vouts = tx['vout']
 
+        print(tx)
+
         i = 1
         for v in vouts:
             if i == v['n']:
+                self.n = v['n']
+                self.amount = v['value']
+                #self.time = v['value']
                 print(v)
                 print()
                 print(v['value'])
