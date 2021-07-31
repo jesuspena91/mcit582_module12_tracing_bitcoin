@@ -39,14 +39,13 @@ class TXO:
     def from_tx_hash(self,tx_hash,n=0):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
-        vouts = tx['vout']
-
         self.tx_hash = tx['hash']
         self.time = datetime.fromtimestamp(tx['time'])
 
+        vouts = tx['vout']
         i = 0
         for v in vouts:
-            if i == v['n']:
+            if i == n:
                 self.n = v['n']
                 self.amount = int(v['value']*100000000) #converting to Satoshi
                 scr = v['scriptPubKey']
