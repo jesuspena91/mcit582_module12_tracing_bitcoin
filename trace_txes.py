@@ -41,35 +41,18 @@ class TXO:
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         vouts = tx['vout']
 
-        #print(tx)
-        print()
-        #tx_hash = tx['hash']
-        #print(tx_hash)
         self.tx_hash = tx['hash']
-        #print(tx['hash'])
-        #print(datetime.fromtimestamp(tx['time']))
-        #self.n = tx['n']
+        self.time = datetime.fromtimestamp(tx['time'])
 
-        i = 1
+        i = 0
         for v in vouts:
             if i == v['n']:
-                #self.n = v['n']
-                #self.amount = v['value']
-                #self.time = v['value']
-                print(v)
-                #print()
-                #print(v['n'])
-                #print(v['value'])
+                self.n = v['n']
+                self.amount = v['value']
                 scr = v['scriptPubKey']
                 addresses = scr['addresses']
-                print(addresses[0])
-                print()
-
-        # self.tx_hash = tx_hash 
-        # self.n = n
-        # self.amount = amount
-        # self.owner = owner
-        # self.time = time
+                self.owner = addresses[0]
+            i=i+1
 
         pass
 
