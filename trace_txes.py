@@ -59,6 +59,7 @@ class TXO:
     def get_inputs(self,d=1):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(self.tx_hash,True)
+        print('hello')
         vins = tx['vin']
 
         for v in vins:
