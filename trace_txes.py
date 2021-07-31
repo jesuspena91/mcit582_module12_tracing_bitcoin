@@ -53,6 +53,8 @@ class TXO:
                 owner_t = addresses[0]
             i=i+1
         
+        print(cls( tx_hash=tx_hash_t, n=n_t, amount=amount_t,owner=owner_t, time=time_t ))
+
         return cls( tx_hash=tx_hash_t, n=n_t, amount=amount_t,owner=owner_t, time=time_t )
 
     def get_inputs(self,d=1):
