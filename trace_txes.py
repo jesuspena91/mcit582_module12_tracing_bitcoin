@@ -61,7 +61,7 @@ class TXO:
         vins = tx['vin']
 
         for v in vins:
-            #print(v)
+            print(v)
 
         pass
 
