@@ -20,9 +20,6 @@ class TXO:
         self.time = time
         self.inputs = []
 
-        temp_list = [1,2]
-        self.inputs.append(temp_list)
-
     def __str__(self, level=0):
         ret = "\t"*level+repr(self.tx_hash)+"\n"
         for tx in self.inputs:
@@ -61,21 +58,16 @@ class TXO:
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
-        temp_list = [1,2]
-        self.inputs.append(temp_list)
-        print('fdsfdsgfdgfds')
-        # if d == 1:
-        #     print('dfsdfs')
-        #     inputs_list = []
-        #     tx = rpc_connection.getrawtransaction(tx_hash,True)
-        #     vins = tx['vin']
-        #     for v in sin:
-        #         txid_v = v['txid']
-        #         tx_v = rpc_connection.getrawtransaction(txid_v,True)
-        #         txo_object = from_tx_hash(tx_v['hash'])
-        #         print('hola')
-        #         print(txo_object)
-        #         self.inputs.append(txo_object)
+        
+        if d == 1:
+            tx = rpc_connection.getrawtransaction(self.tx_hash,True)
+            vins = tx['vin']
+            for v in sin:
+                txid_v = v['txid']
+                tx_v = rpc_connection.getrawtransaction(txid_v,True)
+                txo_object = from_tx_hash(self,tx_v['hash'])
+                self.inputs.append(txo_object)
+        
         print('fdsfdsgfdgfds')
 
         
