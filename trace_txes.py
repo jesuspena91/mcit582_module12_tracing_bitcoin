@@ -64,6 +64,7 @@ class TXO:
         
         if d == 1:
             print('2')
+            print(vins)
             for v in vins:
                 txid_v = v['txid']
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
