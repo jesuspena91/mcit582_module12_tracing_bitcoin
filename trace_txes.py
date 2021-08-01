@@ -61,7 +61,9 @@ class TXO:
         if d == 1:
             tx = rpc_connection.getrawtransaction(self.tx_hash,True)
             vins = tx['vin']
+            print('here')
             for v in vins:
+                print(v)
                 tx_v = rpc_connection.getrawtransaction(v['txid'],True)
                 print(tx_v)
                 print(tx_v['hash'])
