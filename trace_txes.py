@@ -59,7 +59,17 @@ class TXO:
         #YOUR CODE HERE
 
         if d == 1:
-            print(d)
+            inputs_list = []
+            tx = rpc_connection.getrawtransaction(tx_hash,True)
+            vins = tx['vin']
+            for v in sin:
+                txid_v = v['txid']
+                tx_v = rpc_connection.getrawtransaction(txid_v,True)
+                txo_object = from_tx_hash(tx_v['hash'])
+                print('hola')
+                print(txo_object)
+                self.inputs.append(txo_object)
+
         elif d > 1:
             print(d)
             d=d-1
