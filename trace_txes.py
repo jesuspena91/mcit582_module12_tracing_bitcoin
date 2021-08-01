@@ -67,6 +67,7 @@ class TXO:
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
                 txo_object = TXO.from_tx_hash(tx_v['hash'])
                 self.inputs.append(txo_object)
+                print(self.inputs)
         elif d > 1:
             d=d-1
             for v in vins:
