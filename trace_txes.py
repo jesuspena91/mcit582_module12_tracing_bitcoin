@@ -43,6 +43,8 @@ class TXO:
 
         vouts = tx['vout']
         i = 0
+        amount=0
+        owner=''
         for v in vouts:
             if i == n:
                 amount = int(v['value']*100000000) #converting to Satoshi
