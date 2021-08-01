@@ -18,7 +18,7 @@ class TXO:
         self.amount = amount
         self.owner = owner
         self.time = time
-        self.inputs = []
+        self.inputs = [1,2,3]
 
     def __str__(self, level=0):
         ret = "\t"*level+repr(self.tx_hash)+"\n"
