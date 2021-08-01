@@ -70,11 +70,7 @@ class TXO:
                 print('hola')
                 print(txo_object)
                 self.inputs.append(txo_object)
-
-        elif d > 1:
-            print(d)
-            d=d-1
-            get_inputs(self,d)
+        print('fdsfdsgfdgfds')
 
         
 
