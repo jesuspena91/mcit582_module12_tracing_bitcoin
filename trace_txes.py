@@ -72,6 +72,7 @@ class TXO:
                 self.inputs.append(txo_object)
                 print('4')
                 print(self.inputs)
+                print(self.inputs[0])
                 print(len(self.inputs))
         elif d > 1:
             print('3')
