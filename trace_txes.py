@@ -59,17 +59,11 @@ class TXO:
         #YOUR CODE HERE
 
         if d == 1:
-            tx = rpc_connection.getrawtransaction(self.tx_hash,True)
-            vins = tx['vin']
-            print('here')
-            for v in vins:
-                print(v)
-                tx_v = rpc_connection.getrawtransaction(v['txid'],True)
-                print(tx_v)
-                print(tx_v['hash'])
-                print('hello')
+            print(d)
         elif d > 1:
-            print('fdfdsfsdfds')
+            print(d)
+            d=d-1
+            get_inputs(self,d)
 
         
 
