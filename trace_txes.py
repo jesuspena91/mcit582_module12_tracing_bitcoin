@@ -53,12 +53,15 @@ class TXO:
                 owner_t = addresses[0]
             i=i+1
 
-        return cls( tx_hash=1, n=1, amount=1,owner=1, time=1 )
+        return cls( tx_hash=tx_has, n=n, amount=amount_t,owner=owner_t, time=time_t )
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(self.tx_hash,True)
         vins = tx['vin']
+
+        if d == 1:
+            print('hello')
 
         for v in vins:
             print('hello')
