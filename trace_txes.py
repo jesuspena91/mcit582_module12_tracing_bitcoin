@@ -63,10 +63,11 @@ class TXO:
             vins = tx['vin']
             for v in vins:
                 tx_v = rpc_connection.getrawtransaction(v['txid'],True)
-                print(tx_vtx['hash'])
+                print(tx_v)
+                print(tx_v['hash'])
                 print('hello')
         elif d > 1:
-            print('hello')
+            print('fdfdsfsdfds')
 
         
 
