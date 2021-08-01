@@ -40,7 +40,7 @@ class TXO:
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
         # tx_hash_t = tx['hash']
-        # time_t = datetime.fromtimestamp(tx['time'])
+        time_t = datetime.fromtimestamp(tx['time'])
 
         # vouts = tx['vout']
         # i = 0
@@ -53,7 +53,7 @@ class TXO:
         #         owner_t = addresses[0]
         #     i=i+1
 
-        return 1#cls( tx_hash=tx_hash, n=n, amount=amount_t,owner=owner_t, time=time_t )
+        return cls( tx_hash=tx_hash, n=n, amount=10,owner='owner_t', time=time_t )
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
