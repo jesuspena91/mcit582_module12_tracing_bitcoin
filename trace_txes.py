@@ -69,6 +69,7 @@ class TXO:
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
                 txo_object = TXO.from_tx_hash(tx_v['hash'])
                 self.inputs.append(txo_object)
+                print('4')
         elif d > 1:
             print('3')
             d=d-1
