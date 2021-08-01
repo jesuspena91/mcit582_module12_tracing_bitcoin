@@ -69,7 +69,7 @@ class TXO:
                 txid_v = v['txid']
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
                 txo_object = TXO.from_tx_hash(tx_v['hash'])
-                txo_object.inputs.append(txo_object)
+                self.inputs.append(txo_object)
                 print('4')
                 print(self.inputs)
                 print(len(self.inputs))
