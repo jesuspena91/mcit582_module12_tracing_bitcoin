@@ -57,7 +57,8 @@ class TXO:
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
-        self.inputs.append(1)
+        temp_list = [1,2]
+        self.inputs.append(temp_list)
         print('fdsfdsgfdgfds')
         # if d == 1:
         #     print('dfsdfs')
