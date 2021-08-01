@@ -47,14 +47,13 @@ class TXO:
             if i == n:
                 n_t = v['n']
                 amount_t = int(v['value']*100000000) #converting to Satoshi
+                print(amount_t)
                 scr = v['scriptPubKey']
                 addresses = scr['addresses']
                 owner_t = addresses[0]
-                print(owner_t)
-                print(type(owner_t))
             i=i+1
         print(1)
-        return cls( tx_hash=tx_hash, n=n, amount=10,owner=owner_t, time=time_t )
+        return cls( tx_hash=tx_hash, n=n, amount=amount_t,owner=owner_t, time=time_t )
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
