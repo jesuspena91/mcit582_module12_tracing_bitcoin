@@ -18,7 +18,7 @@ class TXO:
         self.amount = amount
         self.owner = owner
         self.time = time
-        self.inputs = [1,2,3]
+        self.inputs = []
 
     def __str__(self, level=0):
         ret = "\t"*level+repr(self.tx_hash)+"\n"
@@ -58,16 +58,22 @@ class TXO:
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
-        print('fdsfsd')
         tx = rpc_connection.getrawtransaction(self.tx_hash,True)
+        vins = tx['vin']
         
         if d == 1:
-            vins = tx['vin']
             for v in vins:
                 txid_v = v['txid']
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
-                txo_object = from_tx_hash(self,tx_v['hash'])
+                txo_object = from_tx_hash(tx_v['hash'])
                 self.inputs.append(txo_object)
+        elif d > 1:
+            d=d-1
+            for v in vins:
+                txid_v = v['txid']
+                tx_v = rpc_connection.getrawtransaction(txid_v,True)
+                txo_object = from_tx_hash(tx_v['hash'])
+                get_inputs(txo_object,d)
 
         
 
