@@ -65,14 +65,14 @@ class TXO:
             for v in vins:
                 txid_v = v['txid']
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
-                txo_object = from_tx_hash(tx_v['hash'])
+                txo_object = from_tx_hash(self,tx_v['hash'])
                 self.inputs.append(txo_object)
         elif d > 1:
             d=d-1
             for v in vins:
                 txid_v = v['txid']
                 tx_v = rpc_connection.getrawtransaction(txid_v,True)
-                txo_object = from_tx_hash(tx_v['hash'])
+                txo_object = from_tx_hash(self,tx_v['hash'])
                 get_inputs(txo_object,d)
 
         
