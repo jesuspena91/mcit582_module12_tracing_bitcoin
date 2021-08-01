@@ -57,7 +57,7 @@ class TXO:
 
     def get_inputs(self,d=1):
         #YOUR CODE HERE
-
+        print('fdsfdsgfdgfds')
         if d == 1:
             print('dfsdfs')
             inputs_list = []
