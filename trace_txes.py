@@ -59,6 +59,7 @@ class TXO:
         #YOUR CODE HERE
 
         if d == 1:
+            print('dfsdfs')
             inputs_list = []
             tx = rpc_connection.getrawtransaction(tx_hash,True)
             vins = tx['vin']
