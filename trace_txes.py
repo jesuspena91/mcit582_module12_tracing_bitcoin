@@ -60,8 +60,6 @@ class TXO:
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(self.tx_hash,True)
         vins = tx['vin']
-        
-        print(d)
 
         if d == 1:
             for v in vins:
