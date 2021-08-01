@@ -20,6 +20,9 @@ class TXO:
         self.time = time
         self.inputs = []
 
+        temp_list = [1,2]
+        self.inputs.append(temp_list)
+
     def __str__(self, level=0):
         ret = "\t"*level+repr(self.tx_hash)+"\n"
         for tx in self.inputs:
@@ -52,6 +55,7 @@ class TXO:
                 addresses = scr['addresses']
                 owner = addresses[0]
             i=i+1
+
         
         return cls( tx_hash=tx_hash, n=n, amount=amount,owner=owner, time=time )
 
