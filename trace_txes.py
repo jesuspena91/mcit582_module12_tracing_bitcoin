@@ -39,20 +39,19 @@ class TXO:
     def from_tx_hash(cls,tx_hash,n=0):
         #YOUR CODE HERE
         tx = rpc_connection.getrawtransaction(tx_hash,True)
-        # tx_hash_t = tx['hash']
         time_t = datetime.fromtimestamp(tx['time'])
 
-        # vouts = tx['vout']
-        # i = 0
-        # for v in vouts:
-        #     if i == n:
-        #         n_t = v['n']
-        #         amount_t = int(v['value']*100000000) #converting to Satoshi
-        #         scr = v['scriptPubKey']
-        #         addresses = scr['addresses']
-        #         owner_t = addresses[0]
-        #     i=i+1
-
+        vouts = tx['vout']
+        i = 0
+        for v in vouts:
+            if i == n:
+                n_t = v['n']
+                amount_t = int(v['value']*100000000) #converting to Satoshi
+                scr = v['scriptPubKey']
+                addresses = scr['addresses']
+                owner_t = addresses[0]
+            i=i+1
+        print(1)
         return cls( tx_hash=tx_hash, n=n, amount=10,owner='owner_t', time=time_t )
 
     def get_inputs(self,d=1):
